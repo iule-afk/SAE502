@@ -1,0 +1,16 @@
+CREATE DATABASE gestion_utilisateurs;
+
+USE gestion_utilisateurs;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('rapporteur', 'dev', 'moderateur') NOT NULL
+);
+
+-- Insertion des utilisateurs exemple
+INSERT INTO users (username, password, role) VALUES
+('rapporteur1', PASSWORD('motdepasse1'), 'rapporteur'),
+('dev1', PASSWORD('motdepasse2'), 'dev'),
+('moderateur1', PASSWORD('motdepasse3'), 'moderateur');
